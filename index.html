@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Publicitario: Life360 Canto Maternal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#e6fbf1',
+                            100: '#ccf7e3',
+                            500: '#00d26a',
+                            600: '#00b85c',
+                            700: '#008c46',
+                            900: '#004221',
+                        },
+                        darkbg: '#0B1114',
+                        cardbg: '#141E22',
+                        cardborder: '#202E34',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B1114;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+
+        .efecto-brillo {
+            box-shadow: 0 0 25px -5px rgba(0, 210, 106, 0.2);
+        }
+
+        /* Barra de desplazamiento personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B1114;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #202E34;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00d26a;
+        }
+
+        @media print {
+            .no-imprimir {
+                display: none !important;
+            }
+            body {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+            .tarjeta-impresion {
+                background-color: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                color: #0f172a !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- Encabezado Principal -->
+    <header class="sticky top-0 z-50 bg-darkbg/90 backdrop-blur-md border-b border-cardborder px-4 lg:px-8 py-3 no-imprimir">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-brand-500 flex items-center justify-center font-black text-darkbg text-xl shadow-lg shadow-brand-500/30">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white leading-tight flex items-center gap-2">
+                        Informe de Campaña Publicitaria
+                        <span class="text-[10px] bg-brand-500/20 text-brand-500 border border-brand-500/30 px-2 py-0.5 rounded uppercase font-extrabold">Análisis Dinámico</span>
+                    </h1>
+                    <p class="text-xs text-brand-500 font-medium">Life360 — Anuncio "Canción Maternal" (2025)</p>
+                </div>
+            </div>
+
+            <!-- Botones de Acción -->
+            <div class="flex items-center space-x-3">
+                <a href="https://www.youtube.com/watch?v=Xp8SwX91foE" target="_blank" rel="noopener noreferrer" 
+                   class="flex items-center space-x-2 bg-red-600/20 hover:bg-red-600/30 text-red-400 border border-red-500/30 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all">
+                    <i class="fa-brands fa-youtube text-sm"></i>
+                    <span>Ver Vídeo en YouTube</span>
+                </a>
+                <button onclick="window.print()" 
+                        class="flex items-center space-x-2 bg-brand-500 hover:bg-brand-600 text-darkbg px-3.5 py-1.5 rounded-lg text-xs font-bold shadow-md shadow-brand-500/20 transition-all">
+                    <i class="fa-solid fa-print"></i>
+                    <span>Imprimir Informe</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-8">
+
+        <!-- Banner de Presentación -->
+        <section class="relative rounded-2xl bg-gradient-to-br from-cardbg via-cardbg to-darkbg border border-cardborder p-6 sm:p-8 overflow-hidden efecto-brillo">
+            <div class="absolute -right-16 -bottom-16 w-80 h-80 bg-brand-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-500 text-xs font-bold uppercase tracking-wider">
+                        <i class="fa-solid fa-bullhorn"></i>
+                        <span>Evaluación de Anuncio Publicitario</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+                        Life360 <span class="text-brand-500 block text-2xl sm:text-3xl lg:text-4xl mt-1">"Canción Maternal Extrema"</span>
+                    </h1>
+                    <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                        Análisis detallado de la campaña publicitaria de Life360. Un estudio en español sobre cómo transformar las preocupaciones de los padres en un mensaje divertido, memorable y tranquilizador.
+                    </p>
+
+                    <!-- Ficha Técnica -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-cardborder/60">
+                        <div>
+                            <span class="text-xs text-gray-400 block">Anunciante</span>
+                            <span class="text-sm font-semibold text-white">Life360</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block">Año de Lanzamiento</span>
+                            <span class="text-sm font-semibold text-brand-500">2025</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block">Medio Principal</span>
+                            <span class="text-sm font-semibold text-white">Vídeo en YouTube / TV</span>
+                        </div>
+                        <div>
+                            <span class="text-xs text-gray-400 block">Estilo del Mensaje</span>
+                            <span class="text-sm font-bold text-amber-400 flex items-center gap-1">
+                                <i class="fa-solid fa-face-laugh-beam text-xs"></i> Humor Satírico
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reproductor / Enlace al anuncio -->
+                <div class="lg:col-span-4 flex flex-col items-center">
+                    <div class="w-full aspect-video rounded-xl overflow-hidden border border-cardborder bg-black relative group shadow-2xl">
+                        <iframe class="w-full h-full" 
+                                src="https://www.youtube.com/embed/Xp8SwX91foE" 
+                                title="Anuncio de Life360" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <span class="text-[11px] text-gray-400 mt-2 flex items-center gap-1">
+                        <i class="fa-solid fa-play text-brand-500 text-[10px]"></i> Vídeo analizado (Duración: 1 min 26 seg)
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navegación por Pestañas -->
+        <nav class="flex overflow-x-auto space-x-2 border-b border-cardborder pb-2 no-imprimir scrollbar-none" id="tabs-nav">
+            <button onclick="cambiarPestana('resumen')" id="tab-resumen" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-sm transition-all whitespace-nowrap bg-brand-500 text-darkbg shadow-lg shadow-brand-500/20">
+                <i class="fa-solid fa-file-lines mr-2"></i>Resumen General
+            </button>
+            <button onclick="cambiarPestana('dafo')" id="tab-dafo" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-sm transition-all whitespace-nowrap text-gray-400 hover:text-white hover:bg-cardbg">
+                <i class="fa-solid fa-table-cells mr-2"></i>Matriz DAFO
+            </button>
+            <button onclick="cambiarPestana('publico')" id="tab-publico" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-sm transition-all whitespace-nowrap text-gray-400 hover:text-white hover:bg-cardbg">
+                <i class="fa-solid fa-users mr-2"></i>Público Objetivo
+            </button>
+            <button onclick="cambiarPestana('estrategia')" id="tab-estrategia" class="tab-btn px-4 py-2.5 rounded-xl font-semibold text-sm transition-all whitespace-nowrap text-gray-400 hover:text-white hover:bg-cardbg">
+                <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Estrategia y Escenas
+            </button>
+        </nav>
+
+        <!-- PESTAÑA 1: RESUMEN GENERAL -->
+        <div id="contenido-resumen" class="tab-content space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Resumen de la Campaña -->
+                <div class="md:col-span-2 bg-cardbg rounded-2xl p-6 border border-cardborder space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2 text-brand-500 text-xs font-bold uppercase tracking-wider">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <span>Propósito del Anuncio</span>
+                        </div>
+                        <h2 class="text-xl font-bold text-white">Resumen Ejecutivo de la Campaña</h2>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            <strong>El Reto:</strong> Muchas familias sienten dudas antes de instalar aplicaciones de localización porque temen parecer demasiado controladoras o invadir la privacidad de sus hijos.
+                        </p>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            <strong>La Solución del Anuncio:</strong> El anuncio aborda con humor las exageradas preocupaciones cotidianas de las madres. Muestra cómo una simple duda sobre el paradero de un hijo puede convertirse en una historia de miedo inventada, demostrando que Life360 aporta tranquilidad de forma sencilla.
+                        </p>
+                        
+                        <!-- Cuadro Destacado -->
+                        <div class="p-4 bg-darkbg rounded-xl border border-brand-500/30 space-y-1">
+                            <span class="text-xs text-brand-500 font-bold uppercase block">Mensaje Central</span>
+                            <p class="text-xs text-white italic">
+                                "Sustituye la angustia y las imaginaciones exageradas por la calma de saber dónde está tu familia en todo momento."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-4 border-t border-cardborder">
+                        <div class="bg-darkbg/50 p-3 rounded-xl border border-cardborder">
+                            <span class="text-xs text-gray-400 block">Enfoque Emocional</span>
+                            <span class="text-sm font-semibold text-brand-500">Tranquilidad y Diversión</span>
+                        </div>
+                        <div class="bg-darkbg/50 p-3 rounded-xl border border-cardborder">
+                            <span class="text-xs text-gray-400 block">Llamado a la Acción</span>
+                            <span class="text-sm font-semibold text-white">Descargar la aplicación móvil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aspectos Clave -->
+                <div class="bg-cardbg rounded-2xl p-6 border border-cardborder space-y-4 flex flex-col justify-between">
+                    <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-star text-amber-400"></i>
+                        <span>Puntos Destacados</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-0.5"></i>
+                            <span><strong>Originalidad:</strong> Utiliza una canción pegadiza en lugar del típico anuncio serio de seguridad.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-0.5"></i>
+                            <span><strong>Empatía:</strong> Conecta con situaciones reales que casi todos los padres han sentido alguna vez.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fa-solid fa-circle-check text-brand-500 mt-0.5"></i>
+                            <span><strong>Claridad:</strong> Muestra la pantalla del teléfono al final para explicar el funcionamiento fácil de la app.</span>
+                        </li>
+                    </ul>
+
+                    <div class="p-4 rounded-xl bg-gradient-to-r from-brand-900/30 to-brand-500/10 border border-brand-500/30 text-center">
+                        <span class="text-xs text-brand-500 font-bold block uppercase">Valoración Global</span>
+                        <span class="text-lg font-black text-white">Campaña Muy Efectiva</span>
+                        <span class="text-[10px] text-gray-400 block mt-0.5">Alta recordación y excelente aceptación</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 2: MATRIZ DAFO -->
+        <div id="contenido-dafo" class="tab-content hidden space-y-6">
+            <div class="bg-cardbg rounded-2xl p-6 border border-cardborder">
+                <div class="mb-6">
+                    <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-table-cells-large text-brand-500"></i>
+                        <span>Matriz DAFO de la Campaña</span>
+                    </h3>
+                    <p class="text-xs text-gray-400 mt-1">Análisis de las Debilidades, Amenazas, Fortalezas y Oportunidades de esta pieza publicitaria.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <!-- Debilidades -->
+                    <div class="p-5 bg-darkbg rounded-xl border border-red-500/30 space-y-2">
+                        <div class="flex items-center space-x-2 text-red-400 font-bold">
+                            <i class="fa-solid fa-circle-minus"></i>
+                            <h4 class="uppercase tracking-wider">Debilidades</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-4">
+                            <li>El humor negro podría ser malinterpretado por algunos padres muy sensibles o conservadores.</li>
+                            <li>No explica todas las funciones avanzadas de la aplicación, centrándose solo en la localización.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Amenazas -->
+                    <div class="p-5 bg-darkbg rounded-xl border border-amber-500/30 space-y-2">
+                        <div class="flex items-center space-x-2 text-amber-400 font-bold">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                            <h4 class="uppercase tracking-wider">Amenazas</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-4">
+                            <li>Rechazo de adolescentes que no deseen ser localizados por sus padres.</li>
+                            <li>Competencia de otras aplicaciones de mapas gratuitas que ya vienen incluidas en los teléfonos.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Fortalezas -->
+                    <div class="p-5 bg-darkbg rounded-xl border border-brand-500/30 space-y-2">
+                        <div class="flex items-center space-x-2 text-brand-500 font-bold">
+                            <i class="fa-solid fa-circle-plus"></i>
+                            <h4 class="uppercase tracking-wider">Fortalezas</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-4">
+                            <li>Gran capacidad para llamar la atención desde los primeros segundos gracias a la música.</li>
+                            <li>Mensaje muy fácil de entender y recordar que genera conversaciones entre padres e hijos.</li>
+                            <li>Desdramatiza el tema de la seguridad sin restarle la importancia adecuada.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Oportunidades -->
+                    <div class="p-5 bg-darkbg rounded-xl border border-blue-500/30 space-y-2">
+                        <div class="flex items-center space-x-2 text-blue-400 font-bold">
+                            <i class="fa-solid fa-chart-line"></i>
+                            <h4 class="uppercase tracking-wider">Oportunidades</h4>
+                        </div>
+                        <ul class="space-y-2 text-xs text-gray-300 list-disc pl-4">
+                            <li>Aprovechar la popularidad de los vídeos cortos en redes sociales para difundir fragmentos de la canción.</li>
+                            <li>Conectar con padres jóvenes que valoran el humor directo y prefieren soluciones digitales rápidas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 3: PÚBLICO OBJETIVO -->
+        <div id="contenido-publico" class="tab-content hidden space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Características -->
+                <div class="bg-cardbg rounded-2xl p-6 border border-cardborder space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">¿A quién va dirigido?</h3>
+                    <ul class="space-y-3 text-xs text-gray-300">
+                        <li class="border-b border-cardborder pb-2">
+                            <strong class="text-white block">Población Principal:</strong>
+                            Padres y madres con hijos adolescentes o jóvenes (entre 12 y 20 años).
+                        </li>
+                        <li class="border-b border-cardborder pb-2">
+                            <strong class="text-white block">Edad Aprox. de los Padres:</strong>
+                            35 a 55 años habituados al uso del teléfono móvil.
+                        </li>
+                        <li>
+                            <strong class="text-white block">Entorno Habitual:</strong>
+                            Familias que viven en ciudades y zonas residenciales con rutina diaria activa.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Comportamiento y Miedos -->
+                <div class="bg-cardbg rounded-2xl p-6 border border-cardborder space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Comportamiento y Preocupaciones</h3>
+                    <div class="space-y-3 text-xs text-gray-300">
+                        <p class="leading-relaxed">
+                            Padres atentos a la seguridad de sus hijos que a veces sufren momentos de incertidumbre cuando un hijo no responde un mensaje o se retrasa unos minutos.
+                        </p>
+                        <div class="p-3 bg-darkbg rounded-lg border border-cardborder space-y-1">
+                            <span class="text-amber-400 font-bold block">Pensamiento Frecuente:</span>
+                            <p class="italic text-gray-300">"Quiero saber que mi hijo está bien sin tener que llamarlo a cada momento para no agobiarlo."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Motivaciones -->
+                <div class="bg-cardbg rounded-2xl p-6 border border-cardborder space-y-4">
+                    <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Motivaciones de Compra</h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-500"></i>
+                            <span>Sentir tranquilidad diaria e inmediata.</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-500"></i>
+                            <span>Mantener una buena relación con sus hijos.</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fa-solid fa-check text-brand-500"></i>
+                            <span>Tener una herramienta tecnológica fácil y práctica.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PESTAÑA 4: ESTRATEGIA Y ESCENAS -->
+        <div id="contenido-estrategia" class="tab-content hidden space-y-6">
+            <!-- Estrategia Creativa -->
+            <div class="bg-cardbg rounded-2xl p-6 border border-cardborder space-y-4">
+                <span class="text-xs font-bold text-brand-500 uppercase tracking-wider block">Planteamiento del Mensaje</span>
+                <h3 class="text-xl font-bold text-white">Humor Satírico y Canción de Cuna</h3>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    La estrategia de este anuncio consiste en mezclar dos cosas totalmente opuestas: una melodía dulce de canción de cuna con letras exageradamente dramáticas sobre peligros irreales. De esta forma, el anuncio consigue hacer reír y demostrar que la mayoría de los miedos son solo imaginaciones.
+                </p>
+            </div>
+
+            <!-- Secuencia del Anuncio por Escenas -->
+            <div class="bg-cardbg rounded-2xl p-6 border border-cardborder space-y-6">
+                <div>
+                    <h3 class="text-lg font-bold text-white">Desglose de Escenas del Vídeo</h3>
+                    <p class="text-xs text-gray-400">Estructura paso a paso del anuncio de 1 minuto y 26 segundos.</p>
+                </div>
+
+                <div class="relative border-l-2 border-cardborder ml-4 pl-6 space-y-6">
+                    <!-- Escena 1 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-brand-500 border-4 border-darkbg"></div>
+                        <div class="bg-darkbg p-4 rounded-xl border border-cardborder space-y-1">
+                            <span class="font-bold text-brand-500 text-xs">Escena 1: El Inicio (00:00 - 00:20)</span>
+                            <h4 class="text-sm font-semibold text-white">La Canción Dulce pero Extraña</h4>
+                            <p class="text-xs text-gray-300">
+                                Una madre comienza a cantar dulcemente a su hija en su habitación. Sin embargo, la letra habla de situaciones absurdas y peligrosas, captando la atención del espectador por la sorpresa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Escena 2 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-amber-500 border-4 border-darkbg"></div>
+                        <div class="bg-darkbg p-4 rounded-xl border border-cardborder space-y-1">
+                            <span class="font-bold text-amber-400 text-xs">Escena 2: La Exageración (00:21 - 00:55)</span>
+                            <h4 class="text-sm font-semibold text-white">Historias Irreales</h4>
+                            <p class="text-xs text-gray-300">
+                                La canción continúa enumerando situaciones cada vez más disparatadas (historias de misterio, bosques oscuros, etc.), representando cómo la mente de un padre puede exagerar las cosas.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Escena 3 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-darkbg"></div>
+                        <div class="bg-darkbg p-4 rounded-xl border border-cardborder space-y-1">
+                            <span class="font-bold text-purple-400 text-xs">Escena 3: La Realidad (00:56 - 01:10)</span>
+                            <h4 class="text-sm font-semibold text-white">Interrupción de la Hija</h4>
+                            <p class="text-xs text-gray-300">
+                                La hija interrumpe a su madre y le explica con calma que simplemente estaba atascada en el tráfico. La burbuja de exageración se rompe de forma divertida.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Escena 4 -->
+                    <div class="relative">
+                        <div class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-blue-500 border-4 border-darkbg"></div>
+                        <div class="bg-darkbg p-4 rounded-xl border border-cardborder space-y-1">
+                            <span class="font-bold text-blue-400 text-xs">Escena 4: Cierre (01:11 - 01:26)</span>
+                            <h4 class="text-sm font-semibold text-white">Demostración de la Aplicación</h4>
+                            <p class="text-xs text-gray-300">
+                                Se muestra la pantalla del teléfono con el mapa de Life360 y la frase final: <em>"No más canciones extrañas. Protege a tu familia con Life360"</em>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <footer class="text-center py-6 border-t border-cardborder text-xs text-gray-500 space-y-1">
+            <p>Informe Publicitario en Español • Anuncio Life360 "Canción Maternal"</p>
+            <p class="text-[11px]">Diseñado de forma clara, accesible y dinámica.</p>
+        </footer>
+
+    </main>
+
+    <!-- Código de Funcionamiento e Interactividad -->
+    <script>
+        // CAMBIAR ENTRE PESTAÑAS
+        function cambiarPestana(idPestana) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+            
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-darkbg', 'shadow-lg', 'shadow-brand-500/20');
+                btn.classList.add('text-gray-400', 'hover:text-white', 'hover:bg-cardbg');
+            });
+
+            document.getElementById(`contenido-${idPestana}`).classList.remove('hidden');
+
+            const botonActivo = document.getElementById(`tab-${idPestana}`);
+            botonActivo.classList.remove('text-gray-400', 'hover:text-white', 'hover:bg-cardbg');
+            botonActivo.classList.add('bg-brand-500', 'text-darkbg', 'shadow-lg', 'shadow-brand-500/20');
+
+            window.dispatchEvent(new Event('resize'));
+        }
+    </script>
+</body>
+</html>
